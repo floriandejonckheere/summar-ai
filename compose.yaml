@@ -1,0 +1,39 @@
+x-app: &app
+  build: .
+  platform: linux/x86_64
+  volumes:
+    - .:/app/:cached
+    - bundle:/usr/local/bundle/
+    - npm:/app/node_modules/
+  depends_on:
+    - postgres
+    - redis
+  env_file:
+    - .development.env
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    volumes:
+      - postgres:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+  redis:
+    image: redis:alpine
+    volumes:
+      - redis:/data/
+
+  app:
+    <<: *app
+    command: foreman start
+    tty: true
+    ports:
+      - "4000:3000"
+
+volumes:
+  postgres:
+  redis:
+  bundle:
+  npm:

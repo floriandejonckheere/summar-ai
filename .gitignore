@@ -75,6 +75,7 @@ Untitled
 # Ignore development tools files
 .byebug_history
 dump.rdb
+.ash_history
 
 # Ignore locally cloned framework packages.
 /local
