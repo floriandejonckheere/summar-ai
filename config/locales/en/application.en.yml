@@ -1,11 +1,11 @@
 en:
   application:
-    name: Untitled Application
-    owner: Unidentified Developer
-    description: "You can update this description in `config/locales/en/application.en.yml`."
-    keywords: untitled application seo keywords
-    support_email: change.me@localhost
-    key: untitled_application
+    name: SummarAI
+    owner: Florian Dejonckheere
+    description: "Gain, retain, and apply key insights from books with AI-powered summaries"
+    keywords: "AI, summarization, books, insights, knowledge"
+    support_email: florian@floriandejonckheere.be
+    key: summarai
   webhooks/outgoing/endpoints:
     fields:
       api_version:
