@@ -30,7 +30,7 @@ services:
     command: foreman start
     tty: true
     ports:
-      - "4000:3000"
+      - "4000:4000"
 
 volumes:
   postgres:
